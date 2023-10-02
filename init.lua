@@ -106,13 +106,21 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    -- 'navarasu/onedark.nvim',
+    -- priority = 1000,
+    -- config = function()
+    --   vim.cmd.colorscheme 'onedark'
+    -- end,
+  },
+  {
+    -- Gruvbox Theme
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
+      vim.o.background = "dark"
+      vim.cmd([[colorscheme gruvbox]])
+    end
   },
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -193,6 +201,8 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+-- Make relative line numbers default
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
