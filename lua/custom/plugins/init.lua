@@ -4,5 +4,10 @@
 -- See thhe kickstart.nvim README for more information
 -- require 'custom.plugins.config'
 return {
-"theprimeagen/harpoon"
+	"theprimeagen/harpoon",
+	require("harpoon").setup({
+		menu = {
+			width = vim.api.nvim_win_get_width(0) - 30,
+		}
+	})
 }
