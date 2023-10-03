@@ -22,4 +22,10 @@ return {
 	--Copy to system clipboard
 	vim.keymap.set({"n", "v"}, "<leader>y", [["+y]]);
 	vim.keymap.set("n", "<leader>Y", [["+Y]]);
+
+	--Do not replace the copy buffer with overridden text	
+	vim.keymap.set("x", "<leader>p", [["_dP]]);
+
+	--Restart the LSPserver
+	vim.keymap.set("n", "<leader>LR", function() vim.cmd([[ LspRestart ]]) end, { desc = 'Run the LspRestart command.' })
 }
