@@ -27,5 +27,8 @@ return {
 	vim.keymap.set("x", "<leader>p", [["_dP]]);
 
 	--Restart the LSPserver
-	vim.keymap.set("n", "<leader>LR", function() vim.cmd([[ LspRestart ]]) end, { desc = 'Run the LspRestart command.' })
+	vim.keymap.set("n", "<leader>LR", function() vim.cmd([[ LspRestart ]]) end, { desc = 'Run the LspRestart command.' });
+
+	--Run npm run build from nvim
+	vim.keymap.set("n", "<leader>LN", function() vim.cmd([[ ! npm run build ]]) end, { desc = '! npm run build' });
 }
